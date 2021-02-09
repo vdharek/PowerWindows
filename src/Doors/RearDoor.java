@@ -3,25 +3,37 @@ package Doors;
 public class RearDoor {
 
     private boolean checkChildLock;
-    private int passengerWindow;
-    private int rearRight;
 
-    public int getPassengerWindow() {
+    private boolean passengerWindow = false;
+    private boolean rearRight = false;
+    private boolean rearLeft = false;
+
+    public boolean getPassengerWindow() {
         return passengerWindow;
     }
 
-    public int getRearRight() {
+    public boolean getRearRight() {
         return rearRight;
     }
 
-    public int getRearLeft() {
+    public boolean getRearLeft() {
         return rearLeft;
     }
 
-    private int rearLeft;
-
     public boolean isCheckChildLock() {
         return checkChildLock;
+    }
+
+    public void setPassengerWindow(boolean passengerWindow) {
+        this.passengerWindow = passengerWindow;
+    }
+
+    public void setRearRight(boolean rearRight) {
+        this.rearRight = rearRight;
+    }
+
+    public void setRearLeft(boolean rearLeft) {
+        this.rearLeft = rearLeft;
     }
 
     public void getChildlockStatus(boolean result){
@@ -29,19 +41,13 @@ public class RearDoor {
         System.out.println("GetChildLockStatus() is running");
     }
 
-    public void rearDoorsWindowActivity(int passengerWindow,
-                                        int rearLeft,
-                                        int rearRight){
+    public void rearDoorsWindowActivity(){
         if(checkChildLock == false){
             System.out.println("Now passenger can make a movement of a window");
-            this.passengerWindow = passengerWindow;
-            this.rearLeft = rearLeft;
-            this.rearRight = rearRight;
-            //we can also implement here switch case concept.
+            //Calling of methods.
         }
         else{
             System.out.println("Door windows will be blocked.");
         }
     }
-
 }

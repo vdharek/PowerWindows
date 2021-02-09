@@ -6,25 +6,41 @@ public class DriverDoor {
 
     private boolean childLock = true;
 
-    private int pushButtonDriver;
-    private int pushButtonPassenger;
-    private int pushButtonRearRight;
-    private int pushButtonRearLeft;
+    private boolean pushButtonDriver = false;
+    private boolean pushButtonPassenger = false;
+    private boolean pushButtonRearRight = false;
+    private boolean pushButtonRearLeft = false;
 
-    public int getPushButtonDriver() {
+    public boolean getPushButtonDriver() {
         return pushButtonDriver;
     }
 
-    public int getPushButtonPassenger() {
+    public boolean getPushButtonPassenger() {
         return pushButtonPassenger;
     }
 
-    public int getPushButtonRearRight() {
+    public boolean getPushButtonRearRight() {
         return pushButtonRearRight;
     }
 
-    public int getPushButtonRearLeft() {
+    public boolean getPushButtonRearLeft() {
         return pushButtonRearLeft;
+    }
+
+    public void setPushButtonDriver(boolean pushButtonDriver) {
+        this.pushButtonDriver = pushButtonDriver;
+    }
+
+    public void setPushButtonPassenger(boolean pushButtonPassenger) {
+        this.pushButtonPassenger = pushButtonPassenger;
+    }
+
+    public void setPushButtonRearRight(boolean pushButtonRearRight) {
+        this.pushButtonRearRight = pushButtonRearRight;
+    }
+
+    public void setPushButtonRearLeft(boolean pushButtonRearLeft) {
+        this.pushButtonRearLeft = pushButtonRearLeft;
     }
 
     public boolean isChildLock() {
@@ -36,16 +52,7 @@ public class DriverDoor {
         rearDoor.getChildlockStatus(childLock);
     }
 
-    public void windowsActivity(int pushButtonDriver,
-                                int pushButtonPassenger,
-                                int pushButtonRearLeft,
-                                int pushButtonRearRight){
-        this.pushButtonDriver = pushButtonDriver;
-        this.pushButtonPassenger = pushButtonPassenger;
-        this.pushButtonRearRight = pushButtonRearRight;
-        this.pushButtonRearLeft = pushButtonRearLeft;
-        // we can implement switch case here.
+    public void windowsActivity(){
 
     }
-
 }
