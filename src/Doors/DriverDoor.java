@@ -2,9 +2,9 @@ package Doors;
 
 public class DriverDoor {
 
-    private RearDoor rearDoor = null;
+    private RemainingDoors remainingDoors = null;
 
-    private boolean childLock = true;
+    private boolean childLock = false;
 
     private boolean pushButtonDriver = false;
     private boolean pushButtonPassenger = false;
@@ -49,7 +49,7 @@ public class DriverDoor {
 
     public void setChildLock(boolean childLock) {
         this.childLock = childLock;
-        rearDoor.getChildlockStatus(childLock);
+        remainingDoors.getChildlockStatus(childLock);
     }
 
     public void windowsActivity(){

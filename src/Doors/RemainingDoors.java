@@ -1,6 +1,6 @@
 package Doors;
 
-public class RearDoor {
+public class RemainingDoors {
 
     private boolean checkChildLock;
 

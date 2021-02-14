@@ -5,8 +5,8 @@ public class RadioRemoteControl {
     private boolean centralLockingButton = false;
     private boolean ignition = false;
 
-    private boolean windowsLowered;
-    private boolean windowsRaised;
+    private boolean windowsLowered = false;
+    private boolean windowsRaised = false;
 
     public Object getWindowsLowered() {
         return windowsLowered;
@@ -32,20 +32,40 @@ public class RadioRemoteControl {
         }
     }
 
-    public void windowRegulatorDD(){
+    boolean windowRegulatorDD;
+    boolean windowRegulatorPD;
+    boolean windowRegulatorRR;
+    boolean windowRegulatorRF;
 
+    public boolean isWindowRegulatorDD() {
+        return windowRegulatorDD;
     }
 
-    public void windowRegulatorPD(){
-
+    public void setWindowRegulatorDD(boolean windowRegulatorDD) {
+        this.windowRegulatorDD = windowRegulatorDD;
     }
 
-    public void windowRegulatorRR(){
-
+    public boolean isWindowRegulatorPD() {
+        return windowRegulatorPD;
     }
 
-    public void windowRegulatorRF(){
-
+    public void setWindowRegulatorPD(boolean windowRegulatorPD) {
+        this.windowRegulatorPD = windowRegulatorPD;
     }
 
+    public boolean isWindowRegulatorRR() {
+        return windowRegulatorRR;
+    }
+
+    public void setWindowRegulatorRR(boolean windowRegulatorRR) {
+        this.windowRegulatorRR = windowRegulatorRR;
+    }
+
+    public boolean isWindowRegulatorRF() {
+        return windowRegulatorRF;
+    }
+
+    public void setWindowRegulatorRF(boolean windowRegulatorRF) {
+        this.windowRegulatorRF = windowRegulatorRF;
+    }
 }
