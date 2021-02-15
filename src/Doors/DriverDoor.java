@@ -12,7 +12,13 @@ public class DriverDoor {
     private boolean pushButtonRearLeft = false;
 
     public boolean getPushButtonDriver() {
-        return pushButtonDriver;
+        if(pushButtonDriver == true){
+            System.out.println("Window is raising");
+            return pushButtonDriver;
+        }else {
+            System.out.println("Window is lowering");
+            return pushButtonDriver;
+        }
     }
 
     public boolean getPushButtonPassenger() {
@@ -49,7 +55,8 @@ public class DriverDoor {
 
     public void setChildLock(boolean childLock) {
         this.childLock = childLock;
-        remainingDoors.getChildlockStatus(childLock);
+        System.out.println(childLock);
+        //remainingDoors.setCheckChildLock(childLock);
     }
 
     public void windowsActivity(){

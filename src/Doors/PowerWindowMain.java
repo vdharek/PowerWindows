@@ -4,11 +4,37 @@ import java.util.Scanner;
 
 public class PowerWindowMain {
 
-    DriverDoor driverDoor = new DriverDoor();
+    static DriverDoor driverDoorObj = new DriverDoor();
+    static PowerWindowMain powerWindowMainObj = new PowerWindowMain();
+    public static boolean engineStart = false;
+
     public static void main(String[] args){
 
-        bootUp();
+        powerWindowMainObj.startEngine();
 
+    }
+
+    public void startEngine(){
+
+        System.out.println("Would you like to turn on the engine or just sit in there?");
+        System.out.println("Press 0 to start engine or press 1 to just sit");
+        int engineStatus;
+
+        Scanner engineInput = new Scanner(System.in);
+        if(engineInput.hasNextInt()){
+            engineStatus = engineInput.nextInt();
+            if(engineStatus == 0){
+                System.out.println("Engine has been started");
+                engineStart = true;
+                bootUp();
+            }else if(engineStatus == 1){
+                System.out.println("Engine has not started");
+                bootUp();
+            }else{
+                System.out.println("Please enter right input");
+                startEngine();
+            }
+        }
     }
 
     public static void bootUp(){
@@ -36,7 +62,7 @@ public class PowerWindowMain {
                 }else if(userSelection == 4){
                     radioRemoteControl();
                 }else{
-                    System.out.println("Please select carract option");
+                    System.out.println("Please select correct option");
                     bootUp();
                 }
             }else if(userInput.hasNext()){
@@ -57,15 +83,29 @@ public class PowerWindowMain {
         System.out.println("2 Window Activity PD");
         System.out.println("3 Window Activity RR");
         System.out.println("4 Window Activity RL");
+        System.out.println();
+        System.out.println("Do you want to turn on the child lock on or off?");
+        System.out.println("Write on to turn \"ON\" the child lock or write \"OFF\" to turn off the child lock");
+        System.out.println();
         System.out.println("Please select the activity or press B to return to back menu. or press E to exit");
 
             int userSelection;
             Scanner userInput = new Scanner(System.in);
             if(userInput.hasNextInt()){
                 userSelection = userInput.nextInt();
-                System.out.println(userSelection);
                 if(userSelection == 1){
-                    System.out.println("1 window activity DD");
+                    if(engineStart == true){
+                        System.out.println("Press \"W\" to raise the window or Press \"S\" to lower the window");
+                        String upDown = userInput.next();
+                        if(upDown.equalsIgnoreCase("w")){
+                            driverDoorObj.setPushButtonDriver(true);
+                            driverDoorObj.getPushButtonDriver();
+                        }else{
+                            driverDoorObj.setPushButtonDriver(false);
+                        }
+                    }else{
+                        System.out.println("It will be manually accessed");
+                    }
                 }else if(userSelection == 2){
                     System.out.println("2 Window Activity PD");
                 }else if(userSelection == 3){
@@ -79,6 +119,13 @@ public class PowerWindowMain {
                     System.exit(0);
                 }else if (exit_back.equalsIgnoreCase("b")){
                     bootUp();
+                }else if(exit_back.equalsIgnoreCase("on")){
+                    driverDoorObj.setChildLock(true);
+                }else if(exit_back.equalsIgnoreCase("off")){
+
+                }
+                else{
+                    System.out.println("Invalid input, Please select the activity or press B to return to back menu. or press E to exit");
                 }
             }
         }

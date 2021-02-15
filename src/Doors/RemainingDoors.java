@@ -8,37 +8,36 @@ public class RemainingDoors {
     private boolean rearRight = false;
     private boolean rearLeft = false;
 
-    public boolean getPassengerWindow() {
-        return passengerWindow;
-    }
-
-    public boolean getRearRight() {
-        return rearRight;
-    }
-
-    public boolean getRearLeft() {
-        return rearLeft;
-    }
-
     public boolean isCheckChildLock() {
         return checkChildLock;
+    }
+
+    public void setCheckChildLock(boolean checkChildLock) {
+        this.checkChildLock = checkChildLock;
+    }
+
+    public boolean isPassengerWindow() {
+        return passengerWindow;
     }
 
     public void setPassengerWindow(boolean passengerWindow) {
         this.passengerWindow = passengerWindow;
     }
 
+    public boolean isRearRight() {
+        return rearRight;
+    }
+
     public void setRearRight(boolean rearRight) {
         this.rearRight = rearRight;
     }
 
-    public void setRearLeft(boolean rearLeft) {
-        this.rearLeft = rearLeft;
+    public boolean isRearLeft() {
+        return rearLeft;
     }
 
-    public void getChildlockStatus(boolean result){
-        this.checkChildLock = result;
-        System.out.println("GetChildLockStatus() is running");
+    public void setRearLeft(boolean rearLeft) {
+        this.rearLeft = rearLeft;
     }
 
     public void rearDoorsWindowActivity(){
