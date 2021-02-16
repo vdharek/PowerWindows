@@ -6,7 +6,13 @@ public class AutoWindowRun {
     boolean passengerDoorAuto = false;
 
     public boolean isDriverDoorAuto() {
-        return driverDoorAuto;
+        if(driverDoorAuto == true){
+            System.out.println("Window is raising automatically");
+            return driverDoorAuto;
+        }else{
+            System.out.println("Window is lowering automatically");
+            return driverDoorAuto;
+        }
     }
 
     public void setDriverDoorAuto(boolean driverDoorAuto) {

@@ -2,7 +2,9 @@ package Doors;
 
 public class DriverDoor {
 
-    private RemainingDoors remainingDoors = null;
+    RemainingDoors remainingDoors = new RemainingDoors();
+    AutoWindowRun autoWindowRun = new AutoWindowRun();
+    ManualWindowRun manualWindowRun = new ManualWindowRun();
 
     private boolean childLock = false;
 
@@ -12,11 +14,15 @@ public class DriverDoor {
     private boolean pushButtonRearLeft = false;
 
     public boolean getPushButtonDriver() {
+
         if(pushButtonDriver == true){
-            System.out.println("Window is raising");
+            autoWindowRun.setDriverDoorAuto(pushButtonDriver);
+            autoWindowRun.isDriverDoorAuto();
+
             return pushButtonDriver;
-        }else {
-            System.out.println("Window is lowering");
+        }else{
+            autoWindowRun.setDriverDoorAuto(pushButtonDriver);
+            autoWindowRun.isDriverDoorAuto();
             return pushButtonDriver;
         }
     }
@@ -55,8 +61,7 @@ public class DriverDoor {
 
     public void setChildLock(boolean childLock) {
         this.childLock = childLock;
-        System.out.println(childLock);
-        //remainingDoors.setCheckChildLock(childLock);
+        remainingDoors.setCheckChildLock(childLock);
     }
 
     public void windowsActivity(){

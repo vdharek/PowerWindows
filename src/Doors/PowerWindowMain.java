@@ -87,24 +87,30 @@ public class PowerWindowMain {
         System.out.println("Do you want to turn on the child lock on or off?");
         System.out.println("Write on to turn \"ON\" the child lock or write \"OFF\" to turn off the child lock");
         System.out.println();
-        System.out.println("Please select the activity or press B to return to back menu. or press E to exit");
+        System.out.println("Please select the activity or press \"B\" to return to back menu. or press \"E\" to exit");
+        System.out.println();
 
             int userSelection;
             Scanner userInput = new Scanner(System.in);
             if(userInput.hasNextInt()){
                 userSelection = userInput.nextInt();
                 if(userSelection == 1){
-                    if(engineStart == true){
+
+                    String upDown = userInput.next();
+                    if(engineStart){
                         System.out.println("Press \"W\" to raise the window or Press \"S\" to lower the window");
-                        String upDown = userInput.next();
+
                         if(upDown.equalsIgnoreCase("w")){
                             driverDoorObj.setPushButtonDriver(true);
                             driverDoorObj.getPushButtonDriver();
-                        }else{
+                        }else if (upDown.equalsIgnoreCase("s")){
                             driverDoorObj.setPushButtonDriver(false);
+                            driverDoorObj.getPushButtonDriver();
+                        }else{
+                            System.out.println("Please select the right input");
                         }
                     }else{
-                        System.out.println("It will be manually accessed");
+
                     }
                 }else if(userSelection == 2){
                     System.out.println("2 Window Activity PD");
@@ -121,8 +127,10 @@ public class PowerWindowMain {
                     bootUp();
                 }else if(exit_back.equalsIgnoreCase("on")){
                     driverDoorObj.setChildLock(true);
+                    driverDoor();
                 }else if(exit_back.equalsIgnoreCase("off")){
-
+                    driverDoorObj.setChildLock(false);
+                    driverDoor();
                 }
                 else{
                     System.out.println("Invalid input, Please select the activity or press B to return to back menu. or press E to exit");
