@@ -29,6 +29,7 @@ public class PowerWindowMain {
                 bootUp();
             }else if(engineStatus == 1){
                 System.out.println("Engine has not started");
+                engineStart = false;
                 bootUp();
             }else{
                 System.out.println("Please enter right input");
@@ -95,11 +96,9 @@ public class PowerWindowMain {
             if(userInput.hasNextInt()){
                 userSelection = userInput.nextInt();
                 if(userSelection == 1){
-
+                    System.out.println("Press \"W\" to raise the window or Press \"S\" to lower the window");
                     String upDown = userInput.next();
-                    if(engineStart){
-                        System.out.println("Press \"W\" to raise the window or Press \"S\" to lower the window");
-
+                    if(engineStart == true){
                         if(upDown.equalsIgnoreCase("w")){
                             driverDoorObj.setPushButtonDriver(true);
                             driverDoorObj.getPushButtonDriver();
@@ -110,7 +109,15 @@ public class PowerWindowMain {
                             System.out.println("Please select the right input");
                         }
                     }else{
-
+                        if(upDown.equalsIgnoreCase("w")){
+                            driverDoorObj.setPushButtonDriver(true);
+                            driverDoorObj.getPushButtonDriver();
+                        }else if (upDown.equalsIgnoreCase("s")){
+                            driverDoorObj.setPushButtonDriver(false);
+                            driverDoorObj.getPushButtonDriver();
+                        }else{
+                            System.out.println("Please select the right input");
+                        }
                     }
                 }else if(userSelection == 2){
                     System.out.println("2 Window Activity PD");

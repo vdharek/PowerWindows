@@ -5,6 +5,7 @@ public class DriverDoor {
     RemainingDoors remainingDoors = new RemainingDoors();
     AutoWindowRun autoWindowRun = new AutoWindowRun();
     ManualWindowRun manualWindowRun = new ManualWindowRun();
+    PowerWindowMain powerWindowMain = new PowerWindowMain();
 
     private boolean childLock = false;
 
@@ -15,17 +16,35 @@ public class DriverDoor {
 
     public boolean getPushButtonDriver() {
 
-        if(pushButtonDriver == true){
-            autoWindowRun.setDriverDoorAuto(pushButtonDriver);
-            autoWindowRun.isDriverDoorAuto();
+        if(powerWindowMain.engineStart == true){
+            if(pushButtonDriver){
+                autoWindowRun.setDriverDoorAuto(pushButtonDriver);
+                autoWindowRun.isDriverDoorAuto();
 
-            return pushButtonDriver;
+                return pushButtonDriver;
+            }else{
+                autoWindowRun.setDriverDoorAuto(pushButtonDriver);
+                autoWindowRun.isDriverDoorAuto();
+                return pushButtonDriver;
+            }
         }else{
-            autoWindowRun.setDriverDoorAuto(pushButtonDriver);
-            autoWindowRun.isDriverDoorAuto();
-            return pushButtonDriver;
+            if(pushButtonDriver){
+                manualWindowRun.setDriverDoorWindow(pushButtonDriver);
+                manualWindowRun.isDriverDoorWindow();
+
+                return pushButtonDriver;
+            }else{
+                manualWindowRun.setDriverDoorWindow(pushButtonDriver);
+                manualWindowRun.isDriverDoorWindow();
+                return pushButtonDriver;
+            }
         }
     }
+
+    public void setPushButtonDriver(boolean pushButtonDriver) {
+        this.pushButtonDriver = pushButtonDriver;
+    }
+
 
     public boolean getPushButtonPassenger() {
         return pushButtonPassenger;
@@ -37,10 +56,6 @@ public class DriverDoor {
 
     public boolean getPushButtonRearLeft() {
         return pushButtonRearLeft;
-    }
-
-    public void setPushButtonDriver(boolean pushButtonDriver) {
-        this.pushButtonDriver = pushButtonDriver;
     }
 
     public void setPushButtonPassenger(boolean pushButtonPassenger) {

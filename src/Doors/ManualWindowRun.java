@@ -8,7 +8,13 @@ public class ManualWindowRun {
     private boolean rearRightDoorWindow =  false;
 
     public boolean isDriverDoorWindow() {
-        return driverDoorWindow;
+        if(driverDoorWindow){
+            System.out.println("Window is raising manually");
+            return driverDoorWindow;
+        }else{
+            System.out.println("Window is lowering manually");
+            return driverDoorWindow;
+        }
     }
 
     public void setDriverDoorWindow(boolean driverDoorWindow) {
@@ -40,23 +46,7 @@ public class ManualWindowRun {
     }
 
     public void buttonOperation(){
-        if(driverDoorWindow == true && passengerDoorWindow == true && rearLeftDoorWindow == true && rearRightDoorWindow == true){
-            isDriverDoorWindow();
-            isPassengerDoorWindow();
-            isRearLeftDoorWindow();
-            isRearRightDoorWindow();
-        }else if(driverDoorWindow == true && passengerDoorWindow == true && rearLeftDoorWindow == true){
-            isDriverDoorWindow();
-            isPassengerDoorWindow();
-            isRearLeftDoorWindow();
-        }
-        else if(driverDoorWindow == true && passengerDoorWindow == true){
-            isDriverDoorWindow();
-            isPassengerDoorWindow();
-        }
-        else if(driverDoorWindow == true){
-            isDriverDoorWindow();
-        }
+
     }
 
     public void mExitByUser(){
