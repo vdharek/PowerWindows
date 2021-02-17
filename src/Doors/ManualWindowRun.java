@@ -9,10 +9,10 @@ public class ManualWindowRun {
 
     public boolean isDriverDoorWindow() {
         if(driverDoorWindow){
-            System.out.println("Window is raising manually");
+            System.out.println("Driver door Window is raising manually");
             return driverDoorWindow;
         }else{
-            System.out.println("Window is lowering manually");
+            System.out.println("Driver door Window is lowering manually");
             return driverDoorWindow;
         }
     }
@@ -22,7 +22,13 @@ public class ManualWindowRun {
     }
 
     public boolean isPassengerDoorWindow() {
-        return passengerDoorWindow;
+        if(passengerDoorWindow){
+            System.out.println("Passenger door Window is raising manually");
+            return passengerDoorWindow;
+        }else{
+            System.out.println("Passenger door Window is lowering manually");
+            return passengerDoorWindow;
+        }
     }
 
     public void setPassengerDoorWindow(boolean passengerDoorWindow) {
@@ -30,7 +36,13 @@ public class ManualWindowRun {
     }
 
     public boolean isRearLeftDoorWindow() {
-        return rearLeftDoorWindow;
+        if(rearLeftDoorWindow){
+            System.out.println("Rear left door Window is raising manually");
+            return rearLeftDoorWindow;
+        }else{
+            System.out.println("Rear left door Window is lowering manually");
+            return rearLeftDoorWindow;
+        }
     }
 
     public void setRearLeftDoorWindow(boolean rearLeftDoorWindow) {
@@ -38,7 +50,13 @@ public class ManualWindowRun {
     }
 
     public boolean isRearRightDoorWindow() {
-        return rearRightDoorWindow;
+        if(rearRightDoorWindow){
+            System.out.println("Rear right door Window is raising manually");
+            return rearRightDoorWindow;
+        }else{
+            System.out.println("Rear right door Window is lowering manually");
+            return rearRightDoorWindow;
+        }
     }
 
     public void setRearRightDoorWindow(boolean rearRightDoorWindow) {

@@ -7,7 +7,7 @@ public class DriverDoor {
     ManualWindowRun manualWindowRun = new ManualWindowRun();
     PowerWindowMain powerWindowMain = new PowerWindowMain();
 
-    private boolean childLock = false;
+    private boolean childLock;
 
     private boolean pushButtonDriver = false;
     private boolean pushButtonPassenger = false;
@@ -47,15 +47,55 @@ public class DriverDoor {
 
 
     public boolean getPushButtonPassenger() {
-        return pushButtonPassenger;
+        if(powerWindowMain.engineStart == true){
+            if(pushButtonPassenger){
+                autoWindowRun.setPassengerDoorAuto(pushButtonPassenger);
+                autoWindowRun.isPassengerDoorAuto();
+
+                return pushButtonPassenger;
+            }else{
+                autoWindowRun.setPassengerDoorAuto(pushButtonPassenger);
+                autoWindowRun.isPassengerDoorAuto();
+                return pushButtonPassenger;
+            }
+        }else{
+            if(pushButtonPassenger){
+                manualWindowRun.setPassengerDoorWindow(pushButtonPassenger);
+                manualWindowRun.isPassengerDoorWindow();
+
+                return pushButtonPassenger;
+            }else{
+                manualWindowRun.setPassengerDoorWindow(pushButtonPassenger);
+                manualWindowRun.isPassengerDoorWindow();
+                return pushButtonPassenger;
+            }
+        }
     }
 
     public boolean getPushButtonRearRight() {
-        return pushButtonRearRight;
+        if(pushButtonRearRight){
+            manualWindowRun.setRearRightDoorWindow(pushButtonRearRight);
+            manualWindowRun.isRearRightDoorWindow();
+
+            return pushButtonRearRight;
+        }else{
+            manualWindowRun.setRearRightDoorWindow(pushButtonRearRight);
+            manualWindowRun.isRearRightDoorWindow();
+            return pushButtonRearRight;
+        }
     }
 
     public boolean getPushButtonRearLeft() {
-        return pushButtonRearLeft;
+        if(pushButtonRearLeft){
+            manualWindowRun.setRearLeftDoorWindow(pushButtonRearLeft);
+            manualWindowRun.isRearLeftDoorWindow();
+
+            return pushButtonRearLeft;
+        }else{
+            manualWindowRun.setRearLeftDoorWindow(pushButtonRearLeft);
+            manualWindowRun.isRearLeftDoorWindow();
+            return pushButtonRearLeft;
+        }
     }
 
     public void setPushButtonPassenger(boolean pushButtonPassenger) {

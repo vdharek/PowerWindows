@@ -10,10 +10,10 @@ public class AutoWindowRun {
 
     public boolean isDriverDoorAuto() {
         if(driverDoorAuto){
-            System.out.println("Window is raising automatically");
+            System.out.println("Driver door Window is raising automatically");
             return driverDoorAuto;
         }else{
-            System.out.println("Window is lowering automatically");
+            System.out.println("Driver door Window is lowering automatically");
             return driverDoorAuto;
         }
     }
@@ -23,7 +23,13 @@ public class AutoWindowRun {
     }
 
     public boolean isPassengerDoorAuto() {
-        return passengerDoorAuto;
+        if(passengerDoorAuto){
+            System.out.println("Passenger door Window is raising automatically");
+            return passengerDoorAuto;
+        }else{
+            System.out.println("Passenger door Window is lowering automatically");
+            return passengerDoorAuto;
+        }
     }
 
     public void setPassengerDoorAuto(boolean passengerDoorAuto) {
