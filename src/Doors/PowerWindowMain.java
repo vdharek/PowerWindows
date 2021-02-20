@@ -50,10 +50,14 @@ public class PowerWindowMain {
             String childLockInput = childLockSc.next();
             if(childLockInput.equalsIgnoreCase("on")){
                 childLock = true;
-                driverDoorObj.setChildLock(childLock);
+                remainingDoorsObj.setCheckChildLock(childLock);
+                //driverDoorObj.setChildLock(childLock);
+                //driverDoorObj.isChildLock();
             }else if (childLockInput.equalsIgnoreCase("off")){
                 childLock = false;
-                driverDoorObj.setChildLock(childLock);
+                remainingDoorsObj.setCheckChildLock(childLock);
+                //driverDoorObj.setChildLock(childLock);
+                //driverDoorObj.isChildLock();
             }
         }
     }
@@ -226,6 +230,8 @@ public class PowerWindowMain {
         System.out.println();
         System.out.println("Please select the activity or press \"B\" to return to back menu. or press \"E\" to exit");
         System.out.println();
+        driverDoorObj.setChildLock(childLock);
+        driverDoorObj.isChildLock();
         System.out.println("ChildLock is : "+ childLock);
         System.out.println(remainingDoorsObj.isCheckChildLock());
         System.out.println(engineStart);

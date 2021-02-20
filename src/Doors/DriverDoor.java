@@ -14,6 +14,7 @@ public class DriverDoor {
     private boolean pushButtonRearRight = false;
     private boolean pushButtonRearLeft = false;
 
+    
     public boolean getPushButtonDriver() {
 
         if(powerWindowMain.engineStart == true){
@@ -111,12 +112,13 @@ public class DriverDoor {
     }
 
     public boolean isChildLock() {
+        remainingDoors.setCheckChildLock(childLock);
+        remainingDoors.isCheckChildLock();
         return childLock;
     }
 
     public void setChildLock(boolean childLock) {
         this.childLock = childLock;
-        remainingDoors.setCheckChildLock(childLock);
     }
 
     public void windowsActivity(){

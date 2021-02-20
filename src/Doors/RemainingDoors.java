@@ -12,7 +12,13 @@ public class RemainingDoors {
     private boolean rearLeftWindow = false;
 
     public boolean isCheckChildLock() {
-        return checkChildLock;
+        if (checkChildLock){
+            System.out.println("Child lock is on");
+            return checkChildLock;
+        }else{
+            System.out.println("Child lock is off");
+            return checkChildLock;
+        }
     }
 
     public void setCheckChildLock(boolean checkChildLock) {
