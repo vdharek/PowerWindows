@@ -7,6 +7,7 @@ public class PowerWindowMain {
     static DriverDoor driverDoorObj = new DriverDoor();
     static PowerWindowMain powerWindowMainObj = new PowerWindowMain();
     static RemainingDoors remainingDoorsObj = new RemainingDoors();
+    static RadioRemoteControl radioRemoteControlObj = new RadioRemoteControl();
     public static boolean engineStart = false;
     public static boolean childLock;
 
@@ -52,12 +53,10 @@ public class PowerWindowMain {
                 childLock = true;
                 remainingDoorsObj.setCheckChildLock(childLock);
                 //driverDoorObj.setChildLock(childLock);
-                //driverDoorObj.isChildLock();
             }else if (childLockInput.equalsIgnoreCase("off")){
                 childLock = false;
                 remainingDoorsObj.setCheckChildLock(childLock);
                 //driverDoorObj.setChildLock(childLock);
-                //driverDoorObj.isChildLock();
             }
         }
     }
@@ -110,7 +109,6 @@ public class PowerWindowMain {
         System.out.println("4 Window Activity Rear Left");
         System.out.println();
         powerWindowMainObj.childLock();
-        System.out.println("ChildLock is : "+ childLock);
         System.out.println("Please select the activity or press \"B\" to return to back menu. or press \"E\" to exit");
         System.out.println();
 
@@ -223,6 +221,7 @@ public class PowerWindowMain {
         }
 
     public static void remainingDoors(){
+
         System.out.println("**Remaining Doors**");
         System.out.println("1 Window Activity Passenger Door");
         System.out.println("2 Window Activity Rear Right Door");
@@ -230,11 +229,11 @@ public class PowerWindowMain {
         System.out.println();
         System.out.println("Please select the activity or press \"B\" to return to back menu. or press \"E\" to exit");
         System.out.println();
-        driverDoorObj.setChildLock(childLock);
-        driverDoorObj.isChildLock();
-        System.out.println("ChildLock is : "+ childLock);
-        System.out.println(remainingDoorsObj.isCheckChildLock());
-        System.out.println(engineStart);
+
+        //driverDoorObj.setChildLock(childLock);
+        //driverDoorObj.isChildLock();
+        //remainingDoorsObj.isCheckChildLock();
+
         int userSelection;
         Scanner userInput = new Scanner(System.in);
         if(userInput.hasNextInt()) {
@@ -315,5 +314,66 @@ public class PowerWindowMain {
 
     public static void radioRemoteControl(){
         System.out.println("**Radio Remote Control**");
+        System.out.println("Please choose an action to be performed");
+        System.out.println("1. Central Locking Button");
+        System.out.println("2. Central Opening");
+        System.out.println("3. Central Closing");
+        System.out.println("4. Actuators");
+
+        int userSelection;
+        Scanner radioInput = new Scanner(System.in);
+        if(radioInput.hasNextInt()) {
+            userSelection = radioInput.nextInt();
+            if (userSelection == 1) {
+                System.out.println("***Central Locking Button***");
+                System.out.println("Would you like to central lock? \"Y\" or \"N\" ");
+                String userLockSelection = radioInput.next();
+                if(userLockSelection.equalsIgnoreCase("Y")){
+                    radioRemoteControlObj.setCentralLockingButton(true);
+                    radioRemoteControlObj.isCentralLockingButton();
+                }else if(userLockSelection.equalsIgnoreCase("N")){
+                    radioRemoteControlObj.setCentralLockingButton(false);
+                    radioRemoteControlObj.isCentralLockingButton();
+                }
+            }else if(userSelection == 2){
+                System.out.println("***Central Opening***");
+                radioRemoteControlObj.setIgnition(engineStart);
+                radioRemoteControlObj.setCentralOpening(true);
+                radioRemoteControlObj.isCentralOpening();
+            }else if(userSelection == 3){
+                System.out.println("***Central Closing***");
+                radioRemoteControlObj.setIgnition(engineStart);
+                radioRemoteControlObj.setCentralClosing(true);
+                radioRemoteControlObj.isCentralClosing();
+            }else if(userSelection == 4){
+                System.out.println("***Actuators***");
+                System.out.println("Please select the following");
+                System.out.println("1. Window Regulator Driver Door");
+                System.out.println("2. Window Regulator Passenger Door");
+                System.out.println("3. Window Regulator Rear Left Door");
+                System.out.println("4. Window Regulator Rear Right Door");
+                int actuatorsSelection;
+                if(radioInput.hasNextInt()){
+                    actuatorsSelection = radioInput.nextInt();
+                    if(actuatorsSelection == 1){
+                        radioRemoteControlObj.setWindowRegulatorDD(true);
+                        radioRemoteControlObj.isWindowRegulatorDD();
+                    }else if(actuatorsSelection == 2){
+                        radioRemoteControlObj.setWindowRegulatorPD(true);
+                        radioRemoteControlObj.isWindowRegulatorPD();
+                    }else if(actuatorsSelection == 3){
+                        radioRemoteControlObj.setWindowRegulatorRF(true);
+                        radioRemoteControlObj.isWindowRegulatorRF();
+                    }else if(actuatorsSelection == 4){
+                        radioRemoteControlObj.setWindowRegulatorRR(true);
+                        radioRemoteControlObj.isWindowRegulatorRR();
+                    }else{
+                        System.out.println("Please select the right input");
+                    }
+                }
+            }else{
+                System.out.println("Please select the right input");
+            }
+        }
     }
 }

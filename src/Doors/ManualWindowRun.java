@@ -7,6 +7,9 @@ public class ManualWindowRun {
     private boolean rearLeftDoorWindow =  false;
     private boolean rearRightDoorWindow =  false;
 
+    int v_ManOpen = 1;
+    int v_ManClose = 1;
+
     public boolean isDriverDoorWindow() {
         if(driverDoorWindow){
             System.out.println("Driver door Window is raising manually");

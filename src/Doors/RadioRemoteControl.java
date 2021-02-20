@@ -5,31 +5,54 @@ public class RadioRemoteControl {
     private boolean centralLockingButton = false;
     private boolean ignition = false;
 
-    private boolean windowsLowered = false;
-    private boolean windowsRaised = false;
+    private boolean centralClosing;
+    private boolean centralOpening;
 
-    public Object getWindowsLowered() {
-        return windowsLowered;
-    }
-
-    public boolean getWindowsRaised() {
-        return windowsRaised;
-    }
-
-    public void centralOpening(boolean windowsLowered) {
-        if(ignition == false){
-            this.windowsLowered = windowsLowered;
+    public boolean isCentralClosing() {
+        if(ignition){
+            System.out.println("Ignition is on, central closing will not work");
         }else{
-            System.out.println("No action");
+            System.out.println("Central Closing is in action");
         }
+        return centralClosing;
     }
 
-    public void centralClosing(boolean windowsRaised) {
-        if(ignition == false){
-            this.windowsRaised = windowsRaised;
+    public void setCentralClosing(boolean centralClosing) {
+        this.centralClosing = centralClosing;
+    }
+
+    public boolean isCentralOpening() {
+        if(ignition){
+            System.out.println("Ignition is on, central opening will not work");
         }else{
-            System.out.println("No action");
+            System.out.println("Central Opening is in action");
         }
+        return centralOpening;
+    }
+
+    public void setCentralOpening(boolean centralOpening) {
+        this.centralOpening = centralOpening;
+    }
+
+    public boolean isCentralLockingButton() {
+        if(centralLockingButton == true){
+            System.out.println("Central Lock is activated");
+        }else{
+            System.out.println("Central lock is deactivated");
+        }
+        return centralLockingButton;
+    }
+
+    public void setCentralLockingButton(boolean centralLockingButton) {
+        this.centralLockingButton = centralLockingButton;
+    }
+
+    public boolean isIgnition() {
+        return ignition;
+    }
+
+    public void setIgnition(boolean ignition) {
+        this.ignition = ignition;
     }
 
     boolean windowRegulatorDD;
@@ -38,6 +61,7 @@ public class RadioRemoteControl {
     boolean windowRegulatorRF;
 
     public boolean isWindowRegulatorDD() {
+        System.out.println("Window Regulator Driver Door is in action");
         return windowRegulatorDD;
     }
 
@@ -46,6 +70,7 @@ public class RadioRemoteControl {
     }
 
     public boolean isWindowRegulatorPD() {
+        System.out.println("Window Regulator Passenger Door is in action");
         return windowRegulatorPD;
     }
 
@@ -54,6 +79,7 @@ public class RadioRemoteControl {
     }
 
     public boolean isWindowRegulatorRR() {
+        System.out.println("Window Regulator Rear Right Door is in action");
         return windowRegulatorRR;
     }
 
@@ -62,6 +88,7 @@ public class RadioRemoteControl {
     }
 
     public boolean isWindowRegulatorRF() {
+        System.out.println("Window Regulator Rear Left Door is in action");
         return windowRegulatorRF;
     }
 
