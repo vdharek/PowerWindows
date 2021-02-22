@@ -66,7 +66,7 @@ public class ManualWindowRun {
         this.rearRightDoorWindow = rearRightDoorWindow;
     }
 
-    public void buttonOperation(){
+    /*public void buttonOperation(){
 
     }
 
@@ -76,6 +76,6 @@ public class ManualWindowRun {
 
     public void mExitBySystem(){
 
-    }
+    }*/
 
 }

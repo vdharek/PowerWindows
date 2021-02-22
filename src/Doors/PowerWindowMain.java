@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class PowerWindowMain {
 
     static DriverDoor driverDoorObj = new DriverDoor();
-    static PowerWindowMain powerWindowMainObj = new PowerWindowMain();
     static RemainingDoors remainingDoorsObj = new RemainingDoors();
     static RadioRemoteControl radioRemoteControlObj = new RadioRemoteControl();
     public static boolean engineStart = false;
@@ -13,11 +12,11 @@ public class PowerWindowMain {
 
     public static void main(String[] args){
 
-        powerWindowMainObj.startEngine();
+        startEngine();
 
     }
 
-    public void startEngine(){
+    public static void startEngine(){
 
         System.out.println("Would you like to turn on the engine or just sit in there?");
         System.out.println("Press 0 to start engine or press 1 to just sit");
@@ -41,7 +40,7 @@ public class PowerWindowMain {
         }
     }
 
-    public void childLock(){
+    public static void childLock(){
         System.out.println("Do you want to turn on the child lock on or off?");
         System.out.println("Write on to turn \"ON\" the child lock or write \"OFF\" to turn off the child lock");
         System.out.println();
@@ -108,7 +107,7 @@ public class PowerWindowMain {
         System.out.println("3 Window Activity Rear Right");
         System.out.println("4 Window Activity Rear Left");
         System.out.println();
-        powerWindowMainObj.childLock();
+        childLock();
         System.out.println("Please select the activity or press \"B\" to return to back menu. or press \"E\" to exit");
         System.out.println();
 

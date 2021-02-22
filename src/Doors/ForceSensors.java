@@ -7,6 +7,10 @@ public class ForceSensors {
     private boolean rearLeftFS;
     private boolean rearRightFS;
 
+    int F_apm_max;
+    int v_rev;
+    int s_apm_rev;
+
     public boolean isDriverDoorFS() {
         return driverDoorFS;
     }
@@ -39,12 +43,12 @@ public class ForceSensors {
         this.rearRightFS = rearRightFS;
     }
 
-    public void apmTriger(){
+    /*public void apmTriger(){
 
     }
 
     public void apmExit(){
 
-    }
+    }*/
 
 }

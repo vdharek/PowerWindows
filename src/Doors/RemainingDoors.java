@@ -94,14 +94,4 @@ public class RemainingDoors {
     public void setRearLeftWindow(boolean rearLeftWindow) {
         this.rearLeftWindow = rearLeftWindow;
     }
-
-    public void rearDoorsWindowActivity(){
-        if(checkChildLock == false){
-            System.out.println("Now passenger can make a movement of a window");
-            //Calling of methods.
-        }
-        else{
-            System.out.println("Door windows will be blocked.");
-        }
-    }
 }

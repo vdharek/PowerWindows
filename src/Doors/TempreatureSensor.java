@@ -39,12 +39,12 @@ public class TempreatureSensor {
         this.rearRightDoorWRM = rearRightDoorWRM;
     }
 
-    public void overheatProtectionTriger(){
+    /*public void overheatProtectionTriger(){
 
     }
 
     public void overheatProtectionExit(){
 
-    }
+    }*/
 
 }

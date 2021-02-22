@@ -36,12 +36,12 @@ public class AutoWindowRun {
         this.passengerDoorAuto = passengerDoorAuto;
     }
 
-    public void functionTriger(){
+    /*public void functionTriger(){
 
     }
 
     public void exitFunction(){
 
-    }
+    }*/
 
 }
